@@ -93,22 +93,23 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
+                href="/beta"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
+              >
+                <span aria-hidden>📱</span> Download for Android (Beta)
+              </a>
+              <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 bg-white px-7 text-sm font-semibold text-brand-dark transition-colors hover:border-brand hover:text-brand"
               >
                 Chat on WhatsApp
               </a>
-              <a
-                href={EMAIL}
-                className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 bg-white px-7 text-sm font-semibold text-brand-dark transition-colors hover:border-brand hover:text-brand"
-              >
-                Email us
-              </a>
             </div>
             <p className="mt-4 text-sm text-zinc-500">
-              Coming soon to Google Play — in active development.
+              Direct install, no Play Store needed yet — this is an early test
+              build, so expect rough edges.
             </p>
           </div>
 
@@ -276,17 +277,23 @@ export default function Home() {
             Want to be first to try it?
           </h2>
           <p className="max-w-xl text-lg text-zinc-600">
-            Kobook is in active development. Message us on WhatsApp or send an
-            email, and we&apos;ll reach out when early access opens up.
+            Kobook is in active testing. Install the Android beta directly, or
+            message us on WhatsApp with any questions or feedback.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="/beta"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
+            >
+              <span aria-hidden>📱</span> Download for Android (Beta)
+            </a>
             <a
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 bg-white px-7 text-sm font-semibold text-brand-dark transition-colors hover:border-brand hover:text-brand"
             >
-              WhatsApp 0814 229 3610
+              WhatsApp {"0814 229 3610"}
             </a>
             <a
               href={EMAIL}
