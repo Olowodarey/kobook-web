@@ -28,16 +28,6 @@ const EMAIL = "mailto:olowodarey@gmail.com?subject=Kobook%20early%20access";
 const PLAY_STORE =
   "https://play.google.com/store/apps/details?id=com.kobook.app";
 
-// Google Play glyph (single-path, monochrome — tinted via currentColor so it
-// inherits the button's text colour). Avoids shipping the official badge image.
-function GooglePlayIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
-      <path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z" />
-    </svg>
-  );
-}
-
 // Rows for the hand-built "shop record book" in the hero. They're meant to
 // read like a page from the paper ledger Kobook replaces — a mix of cash
 // sales, a credit entry, and a restock — so the visual itself explains the app.
@@ -112,9 +102,15 @@ export default function Home() {
                 href={PLAY_STORE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
+                aria-label="Get Kobook on Google Play"
+                className="inline-block transition-opacity hover:opacity-90"
               >
-                <GooglePlayIcon className="h-5 w-5" /> Get it on Google Play
+                {/* Official Google Play badge (has its own clear-space padding). */}
+                <img
+                  src="/google-play-badge.png"
+                  alt="Get it on Google Play"
+                  className="h-14 w-auto"
+                />
               </a>
               <a
                 href={WHATSAPP}
@@ -302,9 +298,14 @@ export default function Home() {
               href={PLAY_STORE}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
+              aria-label="Get Kobook on Google Play"
+              className="inline-block transition-opacity hover:opacity-90"
             >
-              <GooglePlayIcon className="h-5 w-5" /> Get it on Google Play
+              <img
+                src="/google-play-badge.png"
+                alt="Get it on Google Play"
+                className="h-14 w-auto"
+              />
             </a>
             <a
               href={WHATSAPP}
