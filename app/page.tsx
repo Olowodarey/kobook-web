@@ -22,6 +22,22 @@ const WHATSAPP =
   "https://wa.me/2348142293610?text=Hello%2C%20I%20want%20early%20access%20to%20Kobook";
 const EMAIL = "mailto:olowodarey@gmail.com?subject=Kobook%20early%20access";
 
+// Live on the Play Store (package com.kobook.app) — this is the primary way
+// people install Kobook now. The /beta direct-APK redirect still exists as a
+// fallback but is no longer featured.
+const PLAY_STORE =
+  "https://play.google.com/store/apps/details?id=com.kobook.app";
+
+// Google Play glyph (single-path, monochrome — tinted via currentColor so it
+// inherits the button's text colour). Avoids shipping the official badge image.
+function GooglePlayIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
+      <path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z" />
+    </svg>
+  );
+}
+
 // Rows for the hand-built "shop record book" in the hero. They're meant to
 // read like a page from the paper ledger Kobook replaces — a mix of cash
 // sales, a credit entry, and a restock — so the visual itself explains the app.
@@ -93,10 +109,12 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
-                href="/beta"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
+                href={PLAY_STORE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
               >
-                <span aria-hidden>📱</span> Download for Android (Beta)
+                <GooglePlayIcon className="h-5 w-5" /> Get it on Google Play
               </a>
               <a
                 href={WHATSAPP}
@@ -108,8 +126,7 @@ export default function Home() {
               </a>
             </div>
             <p className="mt-4 text-sm text-zinc-500">
-              Direct install, no Play Store needed yet — this is an early test
-              build, so expect rough edges.
+              Free on Google Play — works on any Android phone, online or off.
             </p>
           </div>
 
@@ -274,18 +291,20 @@ export default function Home() {
       <section>
         <div className="mx-auto flex w-full max-w-5xl flex-col items-start gap-6 px-6 py-16 sm:px-10 sm:py-20">
           <h2 className="text-2xl font-semibold tracking-tight text-brand-dark sm:text-3xl">
-            Want to be first to try it?
+            Get Kobook on your phone today
           </h2>
           <p className="max-w-xl text-lg text-zinc-600">
-            Kobook is in active testing. Install the Android beta directly, or
-            message us on WhatsApp with any questions or feedback.
+            Kobook is live on Google Play. Download it free, or message us on
+            WhatsApp with any questions or feedback.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href="/beta"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
+              href={PLAY_STORE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center gap-2.5 rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark"
             >
-              <span aria-hidden>📱</span> Download for Android (Beta)
+              <GooglePlayIcon className="h-5 w-5" /> Get it on Google Play
             </a>
             <a
               href={WHATSAPP}
